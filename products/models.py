@@ -1,4 +1,6 @@
 from django.db import models
+from django.contrib.auth.models import User
+
 
 class Category(models.Model):
     name = models.CharField(max_length=254)
@@ -44,5 +46,6 @@ class Stock(models.Model):
 
 class FavouritePlant(models.Model):
     user = models.ForeignKey('User', on_delete=models.CASCADE)
-    plant_name = models.CharField(max_length=100)
+    plant_name = models.CharField(
+        max_length=100, null=True, blank=True)
     notes = models.CharField(null=True, blank=True)

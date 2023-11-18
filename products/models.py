@@ -41,7 +41,8 @@ class Product(models.Model):
 class Stock(models.Model):
     product = models.ForeignKey('Product', on_delete=models.CASCADE)
     quantity = models.IntegerField()
-    special_notes = models.CharField(max_length=1000)
+    special_notes = models.CharField(
+        max_length=1000,null=True, blank=True)
 
 
 class FavouritePlant(models.Model):

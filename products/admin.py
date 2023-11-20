@@ -2,7 +2,6 @@ from django.contrib import admin
 from .models import *
 
 
-
 # Configure the admin interface for the Painting model
 class ProductAdmin(admin.ModelAdmin):
     list_display = (

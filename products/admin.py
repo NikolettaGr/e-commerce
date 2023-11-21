@@ -24,10 +24,29 @@ class CategoryAdmin(admin.ModelAdmin):
     )
 
 
+# Configure the admin interface for the Stock model
+class StockAdmin(admin.ModelAdmin):
+    list_display = (
+        'product',
+        'quantity',
+        'special_notes',
+    )
+
+
+# Configure the admin interface for the FavouritePlant model
+class FavouritePlantAdmin(admin.ModelAdmin):
+    list_display = (
+        'user',
+        'plant_name',
+        'notes',
+    )
+
+
 # Register the configured admin classes for each model
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Category, CategoryAdmin)
-admin.site.register(Stock)
-admin.site.register(FavouritePlant)
+admin.site.register(Stock, StockAdmin)
+admin.site.register(FavouritePlant, FavouritePlantAdmin)
+
 
 

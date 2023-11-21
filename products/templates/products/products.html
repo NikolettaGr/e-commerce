@@ -25,6 +25,9 @@
                 {% for product in products %}
                 <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                     <div class="card h-100 border-0">
+                        {% if product.is_petfriendly %}
+                        <div class="pet-friendly-label text-success">Pet-friendly</div>
+                        {% endif %}
                         {% if product.image %}
                         <a href="">
                             <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">

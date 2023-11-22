@@ -11,19 +11,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     {% endblock %}
 
-    {% block extra_meta %}
-    <!-- Additional meta tags if needed -->
-    {% endblock %}
-
     {% block corecss %}
     <!-- Bootstrap CSS and your custom styles -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
-    {% endblock %}
-
-    {% block extra_css %}
-    <!-- Additional CSS files if needed -->
     {% endblock %}
 
     {% block corejs %}
@@ -40,10 +32,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"
         defer></script>
-    {% endblock %}
-
-    {% block extra_js %}
-    <!-- Additional JS files if needed -->
     {% endblock %}
 
     <title>Shop Nature {% block extra_title %}{% endblock %}</title>
@@ -124,8 +112,8 @@
                 </ul>
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <form class="form-inline" method="GET" action="{% url 'products' %}">
-                            <input class="form-control border border-black rounded-0" type="text" name="q"
+                        <form class="form-inline my-2 my-lg-0" method="GET" action="{% url 'products' %}">
+                            <input class="form-control mr-sm-2 border border-black rounded-0" type="text" name="q"
                                 placeholder="Search our site">
                             <button class="btn btn-black border border-black rounded-0 mr-3" type="submit">
                                 <i class="fas fa-search"></i>

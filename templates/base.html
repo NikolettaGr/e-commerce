@@ -87,10 +87,11 @@
                         </a>
                         <div class="dropdown-menu border-0" aria-labelledby="category-link">
                             <a href="{% url 'products' %}" class="dropdown-item">All Plants</a>
-                            <a href="" class="dropdown-item ">Indoor Plants</a>
-                            <a href="" class="dropdown-item ">Outdoor Plants</a>
-                            <a href="" class="dropdown-item">Small and Medium Plants</a>
-                            <a href="" class="dropdown-item">Tropical Plants</a>
+                            <a href="{% url 'products' %}?category=indoor" class="dropdown-item ">Indoor Plants</a>
+                            <a href="{% url 'products' %}?category=outdoor" class="dropdown-item ">Outdoor Plants</a>
+                            <a href="{% url 'products' %}?category=small_and_medium" class="dropdown-item">Small and
+                                Medium Plants</a>
+                            <a href="{% url 'products' %}?category=tropical" class="dropdown-item">Tropical Plants</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
@@ -99,7 +100,7 @@
                             Deals
                         </a>
                         <div class="dropdown-menu border-0" aria-labelledby="category-link">
-                            <a href="" class="dropdown-item">Holiday Deals</a>
+                            <a href="{% url 'products' %}?category=holiday" class="dropdown-item">Holiday Deals</a>
                     </li>
                     <li class="nav-item">
                         <a class="logo-font font-weight-bold nav-link text-black mr-5" href="" id="contact-link">

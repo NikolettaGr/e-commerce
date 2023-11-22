@@ -1,15 +1,22 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
-from .models import Product
+from .models import Product, Category
 
 def all_products(request):
     """ A view to show all plant products, including sorting and search queries """
 
     products = Product.objects.all()
     query = None
+    categories = None
 
     if request.GET:
+       # Handle category filtering
+        if 'category' in request.GET:
+            categories = request.GET['category'].split(',')
+            products = products.filter(category__friendly_name__in=categories)
+            categories = Category.objects.filter(friendly_name__in=categories)
+        
         # Handle search
         if 'q' in request.GET:
             query = request.GET['q']
@@ -29,6 +36,7 @@ def all_products(request):
     context = {
         'products': products,
         'search_term': query,
+        'current_categories': categories,
     }
 
     return render(request, 'products/products.html', context)

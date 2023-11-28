@@ -123,6 +123,8 @@ LOGIN_REDIRECT_URL = '/'
 
 WSGI_APPLICATION = 'ecommerce_project.wsgi.application'
 
+ASGI_APPLICATION = 'ecommerce_project.asgi.application'
+
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases

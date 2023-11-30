@@ -39,7 +39,7 @@ def all_products(request):
             categories = request.GET['category'].split(',')
             products = products.filter(category__friendly_name__in=categories)
             categories = Category.objects.filter(friendly_name__in=categories)
-        
+
         # Handle search
         if 'q' in request.GET:
             query = request.GET['q']
@@ -47,7 +47,7 @@ def all_products(request):
                 messages.error(
                     request, "You didn't enter any search criteria!")
                 return redirect(reverse('products'))
-            
+
             queries = (
                 Q(name__icontains=query) |
                 Q(description__icontains=query) |
@@ -55,7 +55,7 @@ def all_products(request):
                 )
 
             products = products.filter(queries)
-    
+
     current_sorting = f'{sort}_{direction}'
 
     context = {
@@ -98,7 +98,7 @@ def add_product(request):
             messages.error(request, 'Failed to add product. Please ensure the from is valid.')
     else:
         form = ProductForm()
-        
+
     template = 'products/add_product.html'
     context = {
         'form': form,

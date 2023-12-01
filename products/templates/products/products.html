@@ -60,10 +60,7 @@
             <div class="row">
                 {% for product in products %}
                 <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                    <div class="card h-100 border-0">
-                        {% if product.is_petfriendly %}
-                        <div class="pet-friendly-label text-success">Pet-friendly</div>
-                        {% endif %}
+                    <div class="card h-100 border-2">
                         {% if product.image %}
                         <a href="{% url 'product_detail' product.id  %}">
                             <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
@@ -94,6 +91,16 @@
                                     {% else %}
                                     <small class="text-muted"><i class="fas fa-star mr-1"></i>No Rating</small>
                                     {% endif %}
+                                    {% if product.is_petfriendly %}
+                                    <small class="card-body text-success">Pet-friendly</small>
+                                    {% endif %}
+                                    {% for stock in product.stock_set.all %}
+                                    {% if stock.quantity > 0 %}
+                                    <small class="ml-3">In stock</small>
+                                    {% else %}
+                                    <small class="ml-3">Coming soon</small>
+                                    {% endif %}
+                                    {% endfor %}
                                     {% if request.user.is_superuser %}
                                     <small class="ml-3">
                                         <a href="{% url 'edit_product' product.id %}">Edit</a> |
@@ -102,14 +109,6 @@
                                     {% endif %}
                                 </div>
                             </div>
-                            {% for stock in product.stock_set.all %}
-                            {% if stock.quantity > 0 %}
-                            <p>In stock: <strong>{{ stock.quantity }}</strong></p>
-                            {% else %}
-                            <p>Coming soon</p>
-                            {% endif %}
-                            <p>Special Notes: {{ stock.special_notes }}</p>
-                            {% endfor %}
                         </div>
                     </div>
                 </div>

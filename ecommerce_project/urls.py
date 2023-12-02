@@ -28,3 +28,4 @@ urlpatterns = [
     path('profile/', include('profiles.urls')),
     path('wishlist/', include('wishlist.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+  + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

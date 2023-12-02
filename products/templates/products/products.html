@@ -60,7 +60,7 @@
             <div class="row">
                 {% for product in products %}
                 <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                    <div class="card h-100 border-2">
+                    <div class="card border-2">
                         {% if product.image %}
                         <a href="{% url 'product_detail' product.id  %}">
                             <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
@@ -72,43 +72,36 @@
                         {% endif %}
                         <div class="card-body pb-0">
                             <p class="mb-0">{{ product.name }}</p>
-                        </div>
-                        <div class="card-footer bg-white pt-0 border-0 text-left">
-                            <div class="row">
-                                <div class="col">
-                                    <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
-                                    {% if product.category %}
-                                    <p class="small mt-1 mb-0">
-                                        <a class="text-muted"
-                                            href="{% url 'products' %}?category={{ product.category.name }}">
-                                            <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }}
-                                        </a>
-                                    </p>
-                                    {% endif %}
-                                    {% if product.rating %}
-                                    <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} /
-                                        5</small>
-                                    {% else %}
-                                    <small class="text-muted"><i class="fas fa-star mr-1"></i>No Rating</small>
-                                    {% endif %}
-                                    {% if product.is_petfriendly %}
-                                    <small class="card-body text-success">Pet-friendly</small>
-                                    {% endif %}
-                                    {% for stock in product.stock_set.all %}
-                                    {% if stock.quantity > 0 %}
-                                    <small class="ml-3">In stock</small>
-                                    {% else %}
-                                    <small class="ml-3">Coming soon</small>
-                                    {% endif %}
-                                    {% endfor %}
-                                    {% if request.user.is_superuser %}
-                                    <small class="ml-3">
-                                        <a href="{% url 'edit_product' product.id %}">Edit</a> |
-                                        <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
-                                    </small>
-                                    {% endif %}
-                                </div>
-                            </div>
+                            <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
+                            {% if product.category %}
+                            <p class="small mt-1 mb-0">
+                                <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
+                                    <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }}
+                                </a>
+                            </p>
+                            {% endif %}
+                            {% if product.rating %}
+                            <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} /
+                                5</small>
+                            {% else %}
+                            <small class="text-muted"><i class="fas fa-star mr-1"></i>No Rating</small>
+                            {% endif %}
+                            {% if product.is_petfriendly %}
+                            <small class="card-body text-success">Pet-friendly</small>
+                            {% endif %}
+                            {% for stock in product.stock_set.all %}
+                            {% if stock.quantity > 0 %}
+                            <small class="ml-3">In stock</small>
+                            {% else %}
+                            <small class="ml-3">Coming soon</small>
+                            {% endif %}
+                            {% endfor %}
+                            {% if request.user.is_superuser %}
+                            <small class="ml-3">
+                                <a href="{% url 'edit_product' product.id %}">Edit</a> |
+                                <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                            </small>
+                            {% endif %}
                         </div>
                     </div>
                 </div>

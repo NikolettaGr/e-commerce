@@ -2,8 +2,17 @@ from django.contrib import admin
 from .models import *
 
 
-# Configure the admin interface for the Painting model
+@admin.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
+    """Admin for the Category model."""
+    list_display = ('name', 'friendly_name',)
+    list_filter = ('name',)
+    search_fields = ('name',)
+
+
+@admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
+    """Admin for the Category model."""
     list_display = (
         'name',
         'category',
@@ -11,16 +20,6 @@ class ProductAdmin(admin.ModelAdmin):
         'sku',
         'rating',
         'image',
-    )
-
-    ordering = ('sku',)
-
-
-# Configure the admin interface for the Category model
-class CategoryAdmin(admin.ModelAdmin):
-    list_display = (
-        'friendly_name',
-        'name',
     )
 
 
@@ -43,8 +42,8 @@ class FavouritePlantAdmin(admin.ModelAdmin):
 
 
 # Register the configured admin classes for each model
-admin.site.register(Product, ProductAdmin)
-admin.site.register(Category, CategoryAdmin)
+# admin.site.register(Product, ProductAdmin)
+# admin.site.register(Category, CategoryAdmin)
 admin.site.register(Stock, StockAdmin)
 admin.site.register(FavouritePlant, FavouritePlantAdmin)
 

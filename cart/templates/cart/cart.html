@@ -79,9 +79,12 @@
                                     </div>
                                 </div>
                             </form>
-                            <a class="update-link text-info"><small>Update</small></a>
-                            <a class="remove-item text-danger float-right" id="remove{{ item.item_id }}"
-                                data-item_id="{{ item.item_id }}"><small>Remove</small></a>
+                            <form method="POST">
+                                {% csrf_token %}
+                                <a class="update-link text-info"><small>Update</small></a>
+                                <a class="remove-item text-danger float-right" id="remove{{ item.item_id }}"
+                                    data-item_id="{{ item.item_id }}"><small>Remove</small></a>
+                            </form>
                         </td>
                         <td class="py-3">
                             <p class="my-0">${{ item.product.price | calc_subtotal:item.quantity }}</p>
@@ -121,7 +124,7 @@
             </div>
             {% else %}
             <p class="lead mb-5">Your cart is empty.</p>
-            <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
+            <a href="{% url 'products' %}" class="btn btn-outline-black rounded-2 btn-lg">
                 <span class="icon">
                     <i class="fas fa-chevron-left"></i>
                 </span>
@@ -133,7 +136,24 @@
 </div>
 {% endblock %}
 
+
+
 {% block postloadjs %}
 {{ block.super }}
+<script>
+    // Remove item and reload on click
+    $('.remove-item').click(function (e) {
+        let csrfToken = "{{ csrf_token }}";
+        let itemId = $(this).attr('id').split('remove')[1];
+        let url = `/cart/remove/${itemId}/`;
+        let data = { 'csrfmiddlewaretoken': csrfToken };
+
+        $.post(url, data)
+            .done(function () {
+                location.reload();
+            });
+    });
+</script>
+
 <script type="text/javascript" src="{% static 'js/quantity_input_script.js' %}"></script>
 {% endblock %}

@@ -18,7 +18,8 @@ def view_wishlist(request):
         'products': products,
         'created_at': wishlist.created_at,
     }
-    return render(request, 'wishlist/wishlist.html', {'wishlist_data': wishlist_data})
+    return render(
+        request, 'wishlist/wishlist.html', {'wishlist_data': wishlist_data})
 
 
 @login_required

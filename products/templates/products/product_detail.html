@@ -83,30 +83,29 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="col-12">
-                        <a href="{% url 'products' %}" class="btn btn-outline-black rounded-2 mt-5">
-                            <span class="icon">
-                                <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="text-uppercase">Keep Shopping</span>
-                        </a>
-                        <input type="submit" class="btn btn-black rounded-2 text-uppercase mt-5" value="Add to Bag">
+                    <div>
+                        <div class="col-12">
+                            <a href="{% url 'products' %}" class="btn btn-outline-black rounded-2 mt-5">
+                                <span class="icon">
+                                    <i class="fas fa-chevron-left"></i>
+                                </span>
+                                <span class="text-uppercase">Keep Shopping</span>
+                            </a>
+                            <input type="submit" class="btn btn-black rounded-2 text-uppercase mt-5" value="Add to Bag">
+                        </div>
+                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
                     </div>
-                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                </div>
             </form>
             {% if user.is_authenticated %}
             <form method="post" action="{% url 'add_to_wishlist' product.id %}">
                 {% csrf_token %}
-                <button type="submit">Add to Wishlist</button>
+                <button type="submit" class="btn btn-black rounded-2 text-uppercase mt-5">Add to wishlist</button>
             </form>
             {% else %}
             <p>Login to add this product to your wishlist.</p>
             {% endif %}
         </div>
     </div>
-</div>
 </div>
 {% endblock %}
 

@@ -81,7 +81,6 @@ def remove_from_wishlist(request, product_id):
     wishlist_data = {
         'user_id': user.id,
         'wishlist_id': wishlist.id,
-        'product': product,
         'created_at': wishlist.created_at,
     }
 

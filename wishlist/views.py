@@ -8,17 +8,17 @@ from products.models import Product
 
 @login_required
 def view_wishlist(request):
-    """ A view that renders the cart contents page """
+    """ A view that renders the wishlist contents page """
     user = request.user
     wishlist, created = Wishlist.objects.get_or_create(user=user)
-    products = Wishlist.objects.filter(user=user)
+    products = wishlist.products.all()
     wishlist_data = {
         'user_id': user.id,
         'wishlist_id': wishlist.id,
         'products': products,
         'created_at': wishlist.created_at,
     }
-    return render(request, 'wishlist/wishlist.html', wishlist_data)
+    return render(request, 'wishlist/wishlist.html', {'wishlist_data': wishlist_data})
 
 
 @login_required

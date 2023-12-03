@@ -21,20 +21,59 @@
     </div>
     <h2>My Wishlist</h2>
 
-    {% if wishlist_data.products %}
-    <ul>
-        {% for product in wishlist_data.products %}
-        <li>
-            <strong>{{ product.name }}</strong>
-            <form method="post" action="{% url 'remove_from_wishlist' product.id %}" class="d-inline">
-                {% csrf_token %}
-                <button type="submit">Remove from Wishlist</button>
-            </form>
-        </li>
-        {% endfor %}
-    </ul>
-    {% else %}
-    <p>Your wishlist is empty.</p>
-    {% endif %}
+    <div class="row">
+        <div class="col">
+            {% if wishlist_data.products %}
+            <div class="table-responsive rounded">
+                <table class="table table-sm table-borderless">
+                    <thead class="text-black">
+                        <tr>
+                            <th scope="col">Product Image</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                    </thead>
+                    {% for product in wishlist_data.products %}
+                    <tr>
+                        <td class="p-3 w-25">
+                            {% if product.image %}
+                            <img class="img-fluid rounded" src="{{ product.image.url }}" style="width: 170px;">
+                            {% else %}
+                            <img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                            {% endif %}
+                        </td>
+                        <td class="py-3">
+                            <p class="my-0"><strong>{{ product.name }}</strong></p>
+                        </td>
+                        <td class="py-3">
+                            <p class="my-0">${{ product.price }}</p>
+                        </td>
+                        <td class="py-3 w-25">
+                            <form method="post" action="{% url 'remove_from_wishlist' product.id %}" class="d-inline">
+                                {% csrf_token %}
+                                <button class="btn btn-black rounded-2 btn-lg" type="submit">Remove from
+                                    Wishlist</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            {% else %}
+            <p>Your wishlist is empty.</p>
+            {% endif %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col text-right">
+            <a href="{% url 'products' %}" class="btn btn-outline-black rounded-2 btn-lg">
+                <span class="icon">
+                    <i class="fas fa-chevron-left"></i>
+                </span>
+                <span class="text-uppercase">Keep Shopping</span>
+            </a>
+        </div>
+    </div>
 </div>
 {% endblock %}

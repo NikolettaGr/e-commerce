@@ -64,6 +64,7 @@ INSTALLED_APPS = [
     'wishlist',
     'cloudinary',
     'support',
+    'newsletter',
 ]
 
 MIDDLEWARE = [

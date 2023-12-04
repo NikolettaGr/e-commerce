@@ -10,7 +10,7 @@
                 id="category-link1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Products
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="category-link">
+            <div class="dropdown-menu border-0" aria-labelledby="category-link1">
                 <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
                 <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item ">By Price</a>
                 <a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item ">By
@@ -22,11 +22,11 @@
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Shop By Category
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="category-link">
+            <div class="dropdown-menu border-0" aria-labelledby="category-link3">
                 <a href="{% url 'products' %}" class="dropdown-item">All Plants</a>
                 <a href="{% url 'products' %}?category=indoor" class="dropdown-item ">Indoor Plants</a>
                 <a href="{% url 'products' %}?category=outdoor" class="dropdown-item ">Outdoor Plants</a>
-                <a href="{% url 'products' %}?category=small_and_medium" class="dropdown-item">Small and
+                <a href="{% url 'products' %}?category=small" class="dropdown-item">Small and
                     Medium Plants</a>
                 <a href="{% url 'products' %}?category=tropical" class="dropdown-item">Tropical Plants</a>
             </div>
@@ -37,7 +37,7 @@
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Deals
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="category-link">
+            <div class="dropdown-menu border-0" aria-labelledby="deals-link">
                 <a href="{% url 'products' %}?category=holiday" class="dropdown-item">Holiday Deals</a>
             </div>
         </li>

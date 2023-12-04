@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="overlay"></div>
+<!-- Content section-->
+<div class="text-center mt-5">
+    <h1 class="text-black fs-3 fw-bolder">About Us</h1>
+</div>
+<hr>
+<section class="py-3">
+    <div class="container my-2">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 d-flex flex-column">
+                <h2>Our Roots:</h2>
+                <p class="mb-0">Established with a profound love for all things green, Shop Nature is more than just a
+                    marketplace – it's a celebration
+                    of nature's wonders. Our journey started with a simple vision: to connect plant enthusiasts with the
+                    most exquisite and
+                    diverse collection of green companions.
+                    <br class="mb-3">
+                    We understand that every leaf tells a story, and we are committed to delivering not just plants but
+                    living, thriving art
+                    pieces to your home. Our plants are sourced from trusted growers, ensuring that each one reaches you
+                    in the healthiest
+                    and most vibrant state.
+                </p>
+            </div>
+            <div class="col-lg-6 d-flex flex-column align-items-center">
+                <img class="img-fluid-adjusted mb-4" src="{% static 'images/aboutus/store2.jpg' %}"
+                    style="max-width: 75%;" alt="Putting water to flowers">
+            </div>
+        </div>
+    </div>
+</section>
+<section class="py-3">
+    <div class="container my-2">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 d-flex flex-column align-items-center">
+                <img class="img-fluid-adjusted mb-4" src="{% static 'images/aboutus/store1.jpg' %}"
+                    style="max-width: 75%;" alt="Human holding a plant">
+            </div>
+            <div class="col-lg-6">
+                <h2>What Sets Us Apart:</h2>
+                <p class="mb-0">At Shop Nature, we pride ourselves on curating a unique selection of plants, each chosen
+                    with care and expertise.
+                    Whether you're an experienced gardener or a first-time plant parent, our diverse range caters to all
+                    levels of
+                    expertise. From air-purifying wonders to exotic succulents, we offer a botanical haven for every
+                    taste and preference.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="py-3">
+    <div class="container my-2">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 d-flex flex-column">
+                <h2>Sustainability Matters:</h2>
+                <p class="mb-0">Our commitment to nature extends beyond the beauty of our products. Shop Nature is
+                    dedicated to sustainable practices,
+                    from eco-friendly packaging to supporting responsible cultivation. With every purchase, you
+                    contribute to our shared
+                    responsibility for the environment.
+                    <br class="mb-3">
+                    Embark on your green journey with Shop Nature – where every leaf tells a story, and every plant
+                    becomes a cherished part
+                    of your home. We invite you to explore our botanical oasis and experience the magic of Shop Nature
+                    firsthand. Together,
+                    let's cultivate moments of joy, one leaf at a time!
+                </p>
+            </div>
+            <div class="col-lg-6 d-flex flex-column align-items-center">
+                <img class="img-fluid-adjusted mb-4" src="{% static 'images/aboutus/store3.jpg' %}"
+                    style="max-width: 75%;" alt="Putting water to flowers">
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="about-pad bg-image-full">
+    <div class="text-center">
+        <a class="navbar-brand" href="#">
+            <img src="{% static 'images/aboutus/logo.png' %}" width="60" height="60" alt="Nature logo">
+        </a>
+        <h2 class="logo-font text-black my-0"><strong>Shop</strong> <span class="green">Nature</span></h2>
+    </div>
+</div>
+<!-- Content section-->
+<section class="py-5">
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 d-flex flex-column align-items-center">
+                <h2>Shop With Confidence</h2>
+                <p class="lead">Our Customer Service is at Your Disposal</p>
+                <p class="mb-0">We will do our best to have your shopping experience engaging and up to high standards!
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

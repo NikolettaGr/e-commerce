@@ -63,6 +63,7 @@ INSTALLED_APPS = [
     'profiles',
     'wishlist',
     'cloudinary',
+    'support',
 ]
 
 MIDDLEWARE = [

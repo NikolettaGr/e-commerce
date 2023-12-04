@@ -59,7 +59,7 @@
         <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
                 <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                    <h2 class="logo-font text-black my-0"><strong>Shop</strong> Nature</h2>
+                    <h2 class="logo-font text-black my-0"><strong>Shop</strong> <span class="green">Nature</span></h2>
                 </a>
             </div>
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
@@ -161,6 +161,108 @@
 
     {% block content %}
     {% endblock %}
+
+    <footer class="text-center font-weight-bold">
+        <section class="d-flex justify-content-center p-4 mt-5 border-bottom">
+            <h2 class="me-5">
+                <a class="btn btn-outline-dark font-weight-bold" href="">Subscribe to our
+                    Newsletter!</a>
+            </h2>
+        </section>
+        <!-- Footer content -->
+        <section class="">
+            <div class="container text-center text-md-start mt-5">
+                <div class="row mt-3">
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Shop Nature
+                        </h6>
+                        <p>
+                            <i class="fas fa-home me-3"></i> Biblioteksgatan 189, Stockholm, Sweden
+                        </p>
+                        <p>
+                            <i class="fas fa-envelope me-3"></i>
+                            shopnature@gmail.com
+                        </p>
+                        <p>
+                            <i class="fas fa-phone me-3"></i> +46 67 12 345 753
+                        </p>
+                    </div>
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Popular Categories
+                        </h6>
+                        <p>
+                            <a href="{% url 'products' %}?category=Indoor" class="text-reset">Indoor</a>
+                        </p>
+                        <p>
+                            <a href="{% url 'products' %}?category=tropical" class="text-reset">Tropical</a>
+                        </p>
+                        <p>
+                            <a href="{% url 'products' %}?category=holiday" class="text-reset">Holiday Deals</a>
+                        </p>
+                    </div>
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            About
+                        </h6>
+                        <p>
+                            <a href="" class="text-reset">Contact Us</a>
+                        </p>
+                        <p>
+                            <a href="" class="text-reset">Terms and Conditions</a>
+                        </p>
+                        <p>
+                            <a href="" class="text-reset">Privacy Policy</a>
+                        </p>
+                    </div>
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <!-- Social Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">Follow Us</h6>
+                        <p>
+                            <a href="https://facebook.com" class="me-4 text-reset" target="_blank"
+                                aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </p>
+                        <p>
+                            <a href="https://twitter.com" class="me-4 text-reset" target="_blank" aria-label="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </p>
+                        <p>
+                            <a href="https://instagram.com" class="me-4 text-reset" target="_blank"
+                                aria-label="Instagram">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                        </p>
+                        <p>
+                            <a href="https://youtube.com" class="me-4 text-reset" target="_blank" aria-label="YouTube">
+                                <i class="fa-brands fa-youtube"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Copyright -->
+        <div class="text-center p-4">
+            Project &copy; Nikoletta Grishaber 2023 <a href="" class="me-4 text-reset" target="_blank"
+                aria-label="GitHub">
+                <i class="fa-brands fa-square-github"></i>
+            </a>
+            <p>Portfolio Project, not a real website</p>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <div class="btt-button shadow-sm rounded-0 border border-black">
+        <span class="sr-only">Back to top</span>
+        <a class="btt-link d-flex h-100">
+            <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
+        </a>
+    </div>
 
     {% block postloadjs %}
     <script type="text/javascript">

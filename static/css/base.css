@@ -92,6 +92,10 @@ body {
     cursor: pointer;
 }
 
+.green {
+    color: #618264
+}
+
 input[name='q']::placeholder {
     color: #aab7c4;
 }

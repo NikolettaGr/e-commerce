@@ -87,13 +87,14 @@
                             <small class="text-muted"><i class="fas fa-star mr-1"></i>No Rating</small>
                             {% endif %}
                             {% if product.is_petfriendly %}
-                            <small class="card-body text-success">Pet-friendly</small>
+                            <small class="text-muted"><i class="fa-solid fa-paw mr-1"></i>Pet-friendly</small>
                             {% endif %}
                             {% for stock in product.stock_set.all %}
                             {% if stock.quantity > 0 %}
-                            <small class="ml-3">In stock</small>
+                            <small class="text-muted"><i class="fa-solid fa-circle-check mr-1"></i>In stock</small>
                             {% else %}
-                            <small class="ml-3">Coming soon</small>
+                            <small class="text-muted"><i class="fa-solid fa-arrow-right mr-1"></i>Coming
+                                soon</small>
                             {% endif %}
                             {% endfor %}
                             {% if request.user.is_superuser %}

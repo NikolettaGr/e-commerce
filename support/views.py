@@ -13,6 +13,7 @@ def about(request):
 
     return render(request, 'support/about.html')
 
+
 def contact(request):
     """ A view to return the contact page """
 
@@ -58,4 +59,3 @@ def contact(request):
     }
 
     return render(request, 'support/contact.html', context)
-

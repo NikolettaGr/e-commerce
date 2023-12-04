@@ -8,7 +8,8 @@ from .forms import ProductForm
 
 
 def all_products(request):
-    """ A view to show all plant products, including sorting and search queries """
+    """ A view to show all plant products,
+    including sorting and search queries """
 
     products = Product.objects.all()
     query = None
@@ -34,7 +35,7 @@ def all_products(request):
                     sortkey = f'-{sortkey}'
             products = products.order_by(sortkey)
 
-       # Handle category filtering
+        # Handle category filtering
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
             products = products.filter(category__friendly_name__in=categories)
@@ -94,7 +95,9 @@ def add_product(request):
             messages.success(request, 'Successfully added product!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to add product. Please ensure the from is valid.')
+            messages.error(
+                request,
+                'Failed to add product. Please ensure the from is valid.')
     else:
         form = ProductForm()
 
@@ -121,7 +124,9 @@ def edit_product(request, product_id):
             messages.success(request, 'Successfully updated product!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to update product. Please ensure the form is valid.')
+            messages.error(
+                request,
+                'Failed to update product. Please ensure the form is valid.')
     else:
         form = ProductForm(instance=product)
         messages.info(request, f'You are editing {product.name}')

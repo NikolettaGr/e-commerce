@@ -3,7 +3,7 @@ from django.contrib.auth import get_user_model
 
 
 class Category(models.Model):
-    
+
     class Meta:
         verbose_name_plural = 'Categories'
 
@@ -46,7 +46,7 @@ class Stock(models.Model):
     product = models.ForeignKey('Product', on_delete=models.CASCADE)
     quantity = models.IntegerField()
     special_notes = models.CharField(
-        max_length=1000,null=True, blank=True)
+     max_length=1000, null=True, blank=True)
 
 
 class FavouritePlant(models.Model):

@@ -40,7 +40,7 @@ def adjust_cart(request, item_id):
         cart[item_id] = quantity
         messages.success(
             request, f'Updated {product.name} quantity to {cart[item_id]}')
-        
+
     else:
         cart.pop(item_id, None)
         messages.success(request, f'Removed {product.name} from your cart')
@@ -51,7 +51,7 @@ def adjust_cart(request, item_id):
 
 def remove_from_cart(request, item_id):
     """Remove the item from the shopping cart"""
-   
+
     try:
         product = get_object_or_404(Product, pk=item_id)
         cart = request.session.get('cart', {})
@@ -61,7 +61,7 @@ def remove_from_cart(request, item_id):
 
         request.session['cart'] = cart
         return HttpResponse(status=200)
-    
+
     except Exception as e:
         messages.error(request, f'Error removing item: {e}')
         return HttpResponse(status=500)

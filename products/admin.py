@@ -41,11 +41,5 @@ class FavouritePlantAdmin(admin.ModelAdmin):
     )
 
 
-# Register the configured admin classes for each model
-# admin.site.register(Product, ProductAdmin)
-# admin.site.register(Category, CategoryAdmin)
 admin.site.register(Stock, StockAdmin)
 admin.site.register(FavouritePlant, FavouritePlantAdmin)
-
-
-

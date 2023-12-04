@@ -43,7 +43,7 @@ def checkout(request):
 
     if request.method == 'POST':
         cart = request.session.get('cart', {})
-        
+
         form_data = {
             'full_name': request.POST['full_name'],
             'email': request.POST['email'],
@@ -56,7 +56,7 @@ def checkout(request):
             'county': request.POST['county'],
         }
         order_form = OrderForm(form_data)
-        
+
         if order_form.is_valid():
             order = order_form.save(commit=False)
             pid = request.POST.get('client_secret').split('_secret')[0]
@@ -104,8 +104,8 @@ def checkout(request):
             currency=settings.STRIPE_CURRENCY,
         )
 
-         # Attempt to prefill the form with
-         # any info the user maintains in their profile
+        # Attempt to prefill the form with
+        # any info the user maintains in their profile
         if request.user.is_authenticated:
             try:
                 profile = UserProfile.objects.get(user=request.user)

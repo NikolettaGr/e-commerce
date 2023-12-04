@@ -1,4 +1,3 @@
-
 """Views to handle errors"""
 from django.shortcuts import render
 

@@ -93,7 +93,7 @@ body {
 }
 
 .green {
-    color: #618264
+    color: #33a849;
 }
 
 input[name='q']::placeholder {
@@ -220,6 +220,19 @@ input[name='q']::placeholder {
 
 .allauth-form-inner-content a {
 	color: #17a2b8; /* text-info */
+}
+
+#delivery-banner {
+  animation-duration: 6s;
+  animation-name: animate-fade;
+  animation-delay: 3s;
+  animation-fill-mode: backwards;
+  animation-iteration-count: infinite;
+}
+
+@keyframes animate-fade {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 /* -------------------------------- Media Queries */

@@ -206,11 +206,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 FREE_DELIVERY_THRESHOLD = 45
 STANDARD_DELIVERY_PERCENTAGE = 15
 STRIPE_CURRENCY = 'usd'
-STRIPE_PUBLIC_KEY = os.environ.get('STRIPE_PUBLIC_KEY')
-STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY')
-
 
 if 'DEVELOPMENT' in os.environ:
+    STRIPE_PUBLIC_KEY = os.environ.get('STRIPE_PUBLIC_KEY')
+    STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY')
     print('Development environment')
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 else:

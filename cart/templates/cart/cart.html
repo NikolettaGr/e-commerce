@@ -136,8 +136,6 @@
 </div>
 {% endblock %}
 
-
-
 {% block postloadjs %}
 {{ block.super }}
 <script>
@@ -155,5 +153,5 @@
     });
 </script>
 
-<script type="text/javascript" src="{% static 'js/quantity_input_script.js' %}"></script>
+<script src="{% static 'js/quantity_input_script.js' %}"></script>
 {% endblock %}

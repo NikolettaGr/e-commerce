@@ -3,6 +3,10 @@ from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
 
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
+from django.utils.html import strip_tags
+
 from .forms import OrderForm
 from .models import Order, OrderLineItem
 
@@ -157,9 +161,20 @@ def checkout_success(request, order_number):
             if user_profile_form.is_valid():
                 user_profile_form.save()
 
+    # Send email confirmation to the user
+    subject = 'Order Confirmation - Shop Nature'
+    from_email = settings.DEFAULT_FROM_EMAIL
+    to_email = order.email
+
+    context = {'order': order}
+    message = render_to_string('checkout/email_confirmation.txt', context)
+    plain_message = strip_tags(message)
+
+    send_mail(subject, plain_message, from_email, [to_email], html_message=message)
+
     messages.success(request, f'Order successfully processed! \
         Your order number is {order_number}. A confirmation \
-        email will be sent to {order.email}.')
+        email has been sent to {order.email}.')
 
     if 'cart' in request.session:
         del request.session['cart']

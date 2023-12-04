@@ -19,7 +19,7 @@ The website was created to be eye-catching and user-friendly. The user is given 
 
 ### **Project Goals**
 
- * Develop CAG website using Django and Bootstrap frameworks, wire up to Stripe
+ * Develop ShopNature website using Django and Bootstrap frameworks, wire up to Stripe
  * Present the website in a clean and easy to understand manner
  * Keep good UX principles regarding layout/colors/interaction
  * Robust Python code without issues/bugs

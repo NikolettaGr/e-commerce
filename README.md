@@ -44,7 +44,6 @@ The website was created to be eye-catching and user-friendly. The user is given 
 
 ### **User Stories**
 
-Many user stories were developed for the project using Agile development methodology, for the full list please see the [CAG Project.](https://github.com/users/Boiann/projects/12 "Link to Cvek Art Gallery Project") The following stories are selected from that project, and are the more important ones.
 
 #### **First Time Visitor**
  * [1](https://github.com/NikolettaGr/e-commerce/issues/1) I can open the home page, so that I can see what this website is about.

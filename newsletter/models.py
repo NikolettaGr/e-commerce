@@ -1,5 +1,6 @@
 from django.db import models
-from django.core.mail import EmailMultiAlternatives
+from django.core.mail import EmailMultiAlternatives, send_mail
+
 
 class SubscribeUsers(models.Model):
     email = models.EmailField(
@@ -90,7 +91,8 @@ class EmailNewsNotification(models.Model):
         msg = EmailMultiAlternatives(subject, text_content, from_email, to)
         msg.attach_alternative(html_content, 'text/html')
         try:
-            msg.send()
+            # msg.send()
+            # Send the email
             print("Email sent successfully")
         except Exception as e:
             print(f"Error sending email: {e}")

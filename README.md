@@ -82,7 +82,9 @@ The business owner's objective is to establish a thriving eCommerce platform ded
 Newsletters were implemented in the newsletter app. The manager can create a newsletter and send it to all customers. To send a newsletter to all customers, the manager can create a newsletter and send it to all customers.
 I have used Django EmailMultiAlternatives to send the newsletter.
 
-![NewsLetter]()
+- I did't have enough time to fix the bug for sending emails.
+
+
 
 
 2. Facebook
@@ -206,12 +208,6 @@ Please refer to the [FEATURES.md](FEATURES.md) file for all test-related documen
 The color scheme utilized in the project intentionally avoids explicit definition, relying on Bootstrap CSS class selectors and templates inspired by the Boutique Ado project. This design choice aims to uphold a clean and cohesive site appearance. Notably, color accents are introduced to enhance user experience standards: red signifies cancellation, while green indicates confirmation. Additionally, shades of green are incorporated to establish a connection with nature. Bootstrap toasts contribute to color-coded messaging: blue for informational updates, yellow for warnings, red for alerts, and green for successful operations.
 
 All the images of paproducts were taken from [Lively Root website](https://www.livelyroot.com/).
-
-
-### Wireframes
-
-  [Shop Nature Wireframes]()
-
 
 
 ### **Database Design**

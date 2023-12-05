@@ -344,9 +344,9 @@ Multiple apps and classes/models were created for the project, each one supporti
 
 
 
-#### SubscribeUsers
+#### Newsletter app
 
-   - Newsletter models:
+   - SubscribeUsers model:
 
 | Name          | Database Key  | Field Type    | Validation |
 | ------------- | ------------- | ------------- | ---------- |
@@ -355,7 +355,7 @@ Multiple apps and classes/models were created for the project, each one supporti
 
 
 
-#### EmailNewsNotification Model
+   - EmailNewsNotification model:
 
 | Name          | Database Key  | Field Type    | Validation |
 | ------------- | ------------- | ------------- | ---------- |

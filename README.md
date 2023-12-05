@@ -42,24 +42,45 @@ The website was created to be eye-catching and user-friendly. The user is given 
  - See what discounts are applied
 
 
-### User Stories
+### **User Stories**
 
-#### First Time Visitor
+Many user stories were developed for the project using Agile development methodology, for the full list please see the [CAG Project.](https://github.com/users/Boiann/projects/12 "Link to Cvek Art Gallery Project") The following stories are selected from that project, and are the more important ones.
 
+#### **First Time Visitor**
+ * [1](https://github.com/NikolettaGr/e-commerce/issues/1) I can open the home page, so that I can see what this website is about.
+ * [2](https://github.com/NikolettaGr/e-commerce/issues/2) I can effectively explore this website, so that I can access all the info I need.
+ * [3](https://github.com/NikolettaGr/e-commerce/issues/3) I can see a list of products, so that I can select one or more to purchase.
+ * [4](https://github.com/NikolettaGr/e-commerce/issues/4) I can find out more about the store, so that I can find out more about them.
+ * [5](https://github.com/NikolettaGr/e-commerce/issues/5) I can modify my shopping cart, so that I can adjust my purchase.
+ * [6](https://github.com/NikolettaGr/e-commerce/issues/6) I can see a notification upon successful modifying/removing, so that I can know I'm doing things right.
+ * [7](https://github.com/NikolettaGr/e-commerce/issues/7) I can connect with the store/business on Facebook so I can follow on any news/updates/special offers.
+ * [8](https://github.com/NikolettaGr/e-commerce/issues/8) As a User I can send email to the store/owner, so that I can complain about the product,order or shipping.
+
+
+#### **Returning Customer**
+ * [9](https://github.com/NikolettaGr/e-commerce/issues/9) I want to be able to register and log in/out without issues.
+ * [10](https://github.com/NikolettaGr/e-commerce/issues/10) I want to get an email notification so that my registration is confirmed.
+ * [11](https://github.com/NikolettaGr/e-commerce/issues/11) I can search or sort by category of products, so that I can select one or more to purchase.
+ * [12](https://github.com/NikolettaGr/e-commerce/issues/12) I can see if there is anything on special offer, so that I can save some money.
+ * [13](https://github.com/NikolettaGr/e-commerce/issues/13) I can remove products from my shopping cart, so that I can adjust my purchase.
+ * [14](https://github.com/NikolettaGr/e-commerce/issues/14) I can have personalized user profile so I can view my order history.
+ * [15](https://github.com/NikolettaGr/e-commerce/issues/15) I can subscribe to the store newsletter so I can know about any news/updates/special offers.
+
+#### **Website Admin/Owner**
+* [16](https://github.com/NikolettaGr/e-commerce/issues/16) I can add/remove products from the store so I can remove sold out products and add new ones.
+* [17](https://github.com/NikolettaGr/e-commerce/issues/17) I can modify products in the store so I can update them with the right details.
+* [18](https://github.com/NikolettaGr/e-commerce/issues/18) I can see what the customer ordered, how much was paid, and was the discount applied.
 
 
 ## Business Model
 
-The Business Model is B2C, meaning that the company sells products to customers only.
-It focuses on individual transactions only.
+The business operates on a Business-to-Consumer (B2C) model, meaning that it exclusively sells products directly to individual customers. The primary focus lies on facilitating individual transactions. The website is designed with simplicity and intuitiveness in mind, prioritizing a positive user experience (UX). Key features include easy sign-ups for newsletters, a user-friendly contact system, potential promotional deals, all aimed at attracting and expanding the customer base.
+
+The business owner's objective is to establish a thriving eCommerce platform dedicated to selling plants. This involves creating a visually appealing website coupled with a seamless and secure payment system. Additionally, the owner should have the capability to efficiently manage inventory and make updates or changes through a secure and interactive front-end interface. This approach ensures a user-friendly experience for both customers and the business owner, fostering growth and success in the online plant-selling venture.
 
 ## Web Marketing
 
-Newsletters were implemented in the email_notification app. The manager can create a newsletter and send it to all customers. It also handles sending newsletters about new loyalty programs with promo codes.
-
-1. News Letter
-
-To send a newsletter to all customers, the manager can create a newsletter and send it to all customers.
+Newsletters were implemented in the newsletter app. The manager can create a newsletter and send it to all customers. To send a newsletter to all customers, the manager can create a newsletter and send it to all customers.
 I have used Django EmailMultiAlternatives to send the newsletter.
 
 ![NewsLetter]()
@@ -185,6 +206,8 @@ Please refer to the [FEATURES.md](FEATURES.md) file for all test-related documen
 
 The color scheme utilized in the project intentionally avoids explicit definition, relying on Bootstrap CSS class selectors and templates inspired by the Boutique Ado project. This design choice aims to uphold a clean and cohesive site appearance. Notably, color accents are introduced to enhance user experience standards: red signifies cancellation, while green indicates confirmation. Additionally, shades of green are incorporated to establish a connection with nature. Bootstrap toasts contribute to color-coded messaging: blue for informational updates, yellow for warnings, red for alerts, and green for successful operations.
 
+All the images of paproducts were taken from [Lively Root website](https://www.livelyroot.com/).
+
 
 ### Wireframes
 
@@ -224,7 +247,7 @@ Multiple apps and classes/models were created for the project, each one supporti
 |original_cart|original_cart|TextField|null=False, blank=False, default=''|
 |stripe_pid|stripe_pid|CharField|max_length=254, null=False, blank=False, default=''|
 
-   - OrderLineItem model
+   - OrderLineItem model:
 
 |Name|Database Key|Field Type|Validation|
 |---|---|---|---|
@@ -239,7 +262,7 @@ Multiple apps and classes/models were created for the project, each one supporti
 
  #### Products app - holding Category, Product, Stock, FavouritePlant
 
-   - Category model
+   - Category model:
 
 | Name          | Database Key  | Field Type    | Validation     |
 | ------------- | ------------- | ------------- | -------------- |
@@ -247,7 +270,7 @@ Multiple apps and classes/models were created for the project, each one supporti
 | friendly_name | friendly_name | CharField     | max_length=254, null=True, blank=True |
 
 
-   - Product model
+   - Product model:
 
 | Name        | Database Key  | Field Type        | Validation                |
 | ----------- | ------------- | ----------------- | ------------------------- |
@@ -259,7 +282,7 @@ Multiple apps and classes/models were created for the project, each one supporti
 | rating      | rating        | DecimalField      | max_digits=6, decimal_places=2, null=True, blank=True |
 | image       | image         | ImageField        | null=True, blank=True     |
 
-   - Stock model
+   - Stock model:
 
 | Name          | Database Key  | Field Type    | Validation     |
 | ------------- | ------------- | ------------- | -------------- |
@@ -267,7 +290,7 @@ Multiple apps and classes/models were created for the project, each one supporti
 | quantity      | quantity      | IntegerField  |                |
 | special_notes | special_notes | CharField     | max_length=1000,null=True, blank=True |
 
-   - FavouritePlant model
+   - FavouritePlant model:
 
 | Name          | Database Key  | Field Type    | Validation     |
 | ------------- | ------------- | ------------- | -------------- |
@@ -296,7 +319,7 @@ Multiple apps and classes/models were created for the project, each one supporti
 
  #### Support app - Contact class used for contacting the store
 
-   - Contact model
+   - Contact model:
 
 | Name             | Database Key     | Field Type    | Validation                                 |
 | ---------------- | ---------------- | ------------- | ------------------------------------------ |
@@ -311,13 +334,35 @@ Multiple apps and classes/models were created for the project, each one supporti
 
 #### Wishlist app - When the user signs up, a new wishlist is created
 
-   - Wishlist model
+   - Wishlist model:
 
 | Name          | Database Key  | Field Type    | Validation |
 | ------------- | ------------- | ------------- | ---------- |
 | user          | user          | ForeignKey   | User, on_delete=models.CASCADE, related_name='wishlist', verbose_name='User' |
 | products      | products      | ManyToManyField | Product, blank=True, related_name='wishlist', verbose_name='Products' |
 | created_at    | created_at    | DateTimeField | auto_now_add=True, verbose_name='Created at' |
+
+
+
+#### SubscribeUsers
+
+   - Newsletter models:
+
+| Name          | Database Key  | Field Type    | Validation |
+| ------------- | ------------- | ------------- | ---------- |
+| email         | email         | EmailField    | max_length=250 |
+| created_at    | created_at    | DateTimeField | auto_now_add=True, verbose_name='Created at' |
+
+
+
+#### EmailNewsNotification Model
+
+| Name          | Database Key  | Field Type    | Validation |
+| ------------- | ------------- | ------------- | ---------- |
+| email_name    | email_name    | CharField    | max_length=100, null=False, unique=True, blank=False, verbose_name='Email name' |
+| content       | content       | TextField    | null=False, blank=False, verbose_name='Content' |
+| created_at    | created_at    | DateTimeField | auto_now_add=True, verbose_name='Created at' |
+
 
 ---
 

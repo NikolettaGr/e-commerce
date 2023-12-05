@@ -22,3 +22,4 @@ whitenoise==6.0.0
 dj-database-url==2.1.0
 psycopg2==2.9.9
 cloudinary==1.37.0
+django-cloudinary-storage==0.3.0

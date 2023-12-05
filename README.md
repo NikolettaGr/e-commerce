@@ -3,7 +3,7 @@
 **Deployed website: [Link to website](https://ecommerce-project-uch6.onrender.com)**
 
 
-![Main image]()
+![Main image](documentation/deployment_screenshots/homepage.png)
 
 **Card number for payment testing: 4242424242424242**
 ## About

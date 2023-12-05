@@ -17,7 +17,7 @@ class SubscribeUsers(models.Model):
 
     def __str__(self):
         """Return the name of the email news notification."""
-        return self.email_name
+        return self.email
 
 
 class EmailNewsNotification(models.Model):
@@ -59,7 +59,7 @@ class EmailNewsNotification(models.Model):
             self.email_name, 'shop_nature', recipients
         )
         text_content = ''
-        if self.code is not None:
+        if self.content:
             html_content = (
                 '<h1 style="color:indigo; text-align:center">' +
                 self.email_name +
@@ -82,11 +82,15 @@ class EmailNewsNotification(models.Model):
                 self.email_name +
                 '</h1><br><p>' + self.content + '</p>'
                 '<br><br><strong>Visit our shop now! </strong><br><br>'
-                '<a href="https://ecommerce-project-uch6.onrender.com>'
+                '<a href="https://ecommerce-project-uch6.onrender.com">'
                 'Go to Shop Nature</a><br><br>'
                 '<p>Thank you for being with us!</p>'
                 '<em>Shop Nature</em>'
             )
         msg = EmailMultiAlternatives(subject, text_content, from_email, to)
         msg.attach_alternative(html_content, 'text/html')
-        msg.send()
+        try:
+            msg.send()
+            print("Email sent successfully")
+        except Exception as e:
+            print(f"Error sending email: {e}")

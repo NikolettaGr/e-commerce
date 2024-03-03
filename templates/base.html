@@ -166,19 +166,18 @@
 
     {% block content %}
     {% endblock %}
-
-    <footer class="text-center font-weight-bold">
-        <section class="d-flex justify-content-center p-4 mt-5 border-bottom">
-            <h2 class="me-5">
-                <a class="btn btn-outline-dark font-weight-bold" href="{% url 'newsletter' %}">Subscribe to our
-                    Newsletter!</a>
-            </h2>
-        </section>
+    <section class="d-flex justify-content-center p-4 mt-5 border-bottom">
+        <h2 class="me-5">
+            <a class="btn btn-outline-dark font-weight-bold" href="{% url 'newsletter' %}">Subscribe to our
+                Newsletter!</a>
+        </h2>
+    </section>
+    <footer class="text-center font-weight-bold bg-white">
         <!-- Footer content -->
         <section>
-            <div class="container text-center text-md-start mt-5">
+            <div class="container text-center text-md-start mt-3">
                 <div class="row mt-3">
-                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4 mt-4">
                         <h6 class="text-uppercase fw-bold mb-4">
                             Shop Nature
                         </h6>
@@ -193,7 +192,7 @@
                             <i class="fas fa-phone me-3"></i> +46 67 12 345 753
                         </p>
                     </div>
-                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4 mt-4">
                         <h6 class="text-uppercase fw-bold mb-4">
                             Popular Categories
                         </h6>
@@ -207,7 +206,7 @@
                             <a href="{% url 'products' %}?category=holiday" class="text-reset">Holiday Deals</a>
                         </p>
                     </div>
-                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4 mt-4">
                         <h6 class="text-uppercase fw-bold mb-4">
                             About
                         </h6>
@@ -221,7 +220,7 @@
                             <a href="" class="text-reset">Privacy Policy</a>
                         </p>
                     </div>
-                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 mt-4">
                         <!-- Social Links -->
                         <h6 class="text-uppercase fw-bold mb-4">Follow Us</h6>
                         <p>
@@ -253,8 +252,8 @@
 
         <!-- Copyright -->
         <div class="text-center p-4">
-            Project &copy; Nikoletta Grishaber 2023 <a href="" class="me-4 text-reset" target="_blank"
-                aria-label="GitHub">
+            Project &copy; Nikoletta Grishaber 2023 <a href="https://github.com/NikolettaGr?tab=repositories"
+                class="me-4 text-reset" target="_blank" aria-label="GitHub">
                 <i class="fa-brands fa-square-github"></i>
             </a>
             <p>Portfolio Project, not a real website</p>
